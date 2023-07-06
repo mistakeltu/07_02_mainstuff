@@ -30,10 +30,7 @@ let newHighScore = 0;
 
 checkBtnDOM.addEventListener('click', function () {
   const newNumber = Number(valueDOM.value);
-  //numberDOM.textContent = randomNumber;
-  //console.log(typeof newNumber);
 
-  console.log(randomNumber);
   if (!newNumber) {
     messageDOM.textContent = 'Need a number';
   } else if (newNumber === randomNumber) {
@@ -45,26 +42,16 @@ checkBtnDOM.addEventListener('click', function () {
       newHighScore = score;
       highscoreDOM.textContent = newHighScore;
     }
-  } else if (newNumber > randomNumber) {
+  } else if (newNumber !== randomNumber) {
     if (score > 1) {
-      messageDOM.textContent = 'Number is to big...';
+      messageDOM.textContent =
+        newNumber > randomNumber ? 'Number is to big...' : 'Number is to small';
       score--;
       scoreDOM.textContent = score;
     } else {
       messageDOM.textContent = 'You lost the game!';
       scoreDOM.textContent = 0;
     }
-  } else if (newNumber < randomNumber) {
-    if (score > 1) {
-      messageDOM.textContent = 'Number is to small...';
-      score--;
-      scoreDOM.textContent = score;
-    } else {
-      messageDOM.textContent = 'You lost the game';
-      scoreDOM.textContent = 0;
-    }
-  } else {
-    messageDOM.textContent = 'Guess again!';
   }
 });
 
@@ -78,3 +65,25 @@ againBtnDOM.addEventListener('click', function () {
   numberDOM.textContent = '?';
   messageDOM.textContent = 'Start guessing...';
 });
+
+//  else if (newNumber > randomNumber) {
+//   if (score > 1) {
+//     messageDOM.textContent = 'Number is to big...';
+//     score--;
+//     scoreDOM.textContent = score;
+//   } else {
+//     messageDOM.textContent = 'You lost the game!';
+//     scoreDOM.textContent = 0;
+//   }
+// } else if (newNumber < randomNumber) {
+//   if (score > 1) {
+//     messageDOM.textContent = 'Number is to small...';
+//     score--;
+//     scoreDOM.textContent = score;
+//   } else {
+//     messageDOM.textContent = 'You lost the game';
+//     scoreDOM.textContent = 0;
+//   }
+// } else {
+//   messageDOM.textContent = 'Guess again!';
+// }
