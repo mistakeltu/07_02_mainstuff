@@ -1,0 +1,19 @@
+{
+  "name": "07_02_mainstuff",
+  "version": "1.0.0",
+  "description": "",
+  "type": "module",
+  "main": "main.js",
+  "scripts": {
+    "course": "nodemon ./07_03_course.js",
+    "pr1": "nodemon ./section_7_pr_1.js",
+    "sec5": "nodemon ./section_5.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Karolis",
+  "license": "MIT",
+  "devDependencies": {
+    "nodemon": "^2.0.22"
+  }
+}
