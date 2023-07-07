@@ -22,14 +22,31 @@ const playerName0DOM = document.querySelector('#name--0');
 const playerName1DOM = document.querySelector('#name--1');
 
 //Starting conditions
-score0DOM.textContent = 0;
-score1DOM.textContent = 0;
-diceDOM.classList.add('hidden');
 
-const scores = [0, 0];
-let currentScore = 0;
-let activePlayer = 0;
-let playingGame = true;
+let scores, currentScore, activePlayer, playingGame;
+
+const reset = _ => {
+  scores = [0, 0];
+  currentScore = 0;
+  activePlayer = 0;
+  playingGame = true;
+
+  playingGame = true;
+  score0DOM.textContent = 0;
+  score1DOM.textContent = 0;
+  current0DOM.textContent = 0;
+  current1DOM.textContent = 0;
+
+  diceDOM.classList.add('hidden');
+  player0DOM.classList.remove('player--winner');
+  player1DOM.classList.remove('player--winner');
+  player0DOM.classList.add('player--active');
+  player1DOM.classList.remove('player--active');
+  playerName0DOM.textContent = `Player 1`;
+  playerName1DOM.textContent = `Player 2`;
+};
+
+reset();
 
 const switchPlayer = _ => {
   document.querySelector(`#current--${activePlayer}`).textContent = 0;
@@ -82,21 +99,4 @@ holdBtnDOM.addEventListener('click', function () {
   }
 });
 
-newGameBtnDOM.addEventListener('click', function () {
-  playingGame = true;
-  document.querySelector(`#current--0`).textContent = 0;
-  document.querySelector(`#current--1`).textContent = 0;
-  document.querySelector(`#score--0`).textContent = 0;
-  document.querySelector(`#score--1`).textContent = 0;
-  diceDOM.classList.add('hidden');
-  document
-    .querySelector(`.player--${activePlayer}`)
-    .classList.remove('player--winner');
-  document.querySelector(`.player--0`).classList.add('player--active');
-  document.querySelector(`#name--${activePlayer}`).textContent = `Player ${
-    activePlayer + 1
-  }`;
-  scores[0] = 0;
-  scores[1] = 0;
-  currentScore = 0;
-});
+newGameBtnDOM.addEventListener('click', reset);
