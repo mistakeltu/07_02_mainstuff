@@ -81,3 +81,22 @@ holdBtnDOM.addEventListener('click', function () {
     }
   }
 });
+
+newGameBtnDOM.addEventListener('click', function () {
+  playingGame = true;
+  document.querySelector(`#current--0`).textContent = 0;
+  document.querySelector(`#current--1`).textContent = 0;
+  document.querySelector(`#score--0`).textContent = 0;
+  document.querySelector(`#score--1`).textContent = 0;
+  diceDOM.classList.add('hidden');
+  document
+    .querySelector(`.player--${activePlayer}`)
+    .classList.remove('player--winner');
+  document.querySelector(`.player--0`).classList.add('player--active');
+  document.querySelector(`#name--${activePlayer}`).textContent = `Player ${
+    activePlayer + 1
+  }`;
+  scores[0] = 0;
+  scores[1] = 0;
+  currentScore = 0;
+});
