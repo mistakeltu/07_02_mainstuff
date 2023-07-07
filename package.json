@@ -8,6 +8,7 @@
     "course": "nodemon ./07_03_course.js",
     "pr1": "nodemon ./section_7_pr_1.js",
     "sec5": "nodemon ./section_5.js",
+    "modal": "nodemon ./modalWindow/modalWindow.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
