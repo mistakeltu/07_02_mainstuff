@@ -10,6 +10,7 @@
     "sec5": "nodemon ./section_5.js",
     "modal": "nodemon ./modalWindow/modalWindow.js",
     "pigame": "nodemon ./pigGame/main.js",
+    "scope": "nodemon ./scope/script.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
