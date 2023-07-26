@@ -44,17 +44,23 @@ const restaurant = {
   },
 };
 
-restaurant.orderDelivery({
-  time: '21:00',
-  address: 'USA',
-  mainIndex: 2,
-  starterIndex: 2,
-});
+const arr = [5, 4, 50, 20];
+const newArr = [1, 2, ...arr];
 
-restaurant.orderDelivery({
-  address: 'USA',
-  starterIndex: 2,
-});
+console.log(newArr);
+
+//Destructuring Objects
+// restaurant.orderDelivery({
+//   time: '21:00',
+//   address: 'USA',
+//   mainIndex: 2,
+//   starterIndex: 2,
+// });
+
+// restaurant.orderDelivery({
+//   address: 'USA',
+//   starterIndex: 2,
+// });
 
 //Nested objects
 // const {
